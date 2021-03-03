@@ -17,10 +17,10 @@ const routes: Routes = [
   { path: 'telephonies/fixes', component: ItemsComponent, data: { category: 'tel-fixes', categoryLabel: 'Téléphones fixes' } },
   { path: 'telephonies/accessoires', component: ItemsComponent, data: { category: 'tel-accessoire', categoryLabel: 'Accessoires de téléphonies' } },
 
-  { path: 'stockages', component: ItemsComponent, data: { category: 'tel', categoryLabel: 'Stockages' } },
-  { path: 'stockages/disques-durs', component: ItemsComponent, data: { category: 'tel-smartphones', categoryLabel: 'Disques durs' } },
-  { path: 'stockages/cle-usb', component: ItemsComponent, data: { category: 'tel-fixes', categoryLabel: 'Clé USB' } },
-  { path: 'stockages/accessoires', component: ItemsComponent, data: { category: 'tel-accessoire', categoryLabel: 'Accessoires de stockage' } },
+  { path: 'stockages', component: ItemsComponent, data: { category: 'stock', categoryLabel: 'Stockages' } },
+  { path: 'stockages/disques-durs', component: ItemsComponent, data: { category: 'stock-dd', categoryLabel: 'Disques durs' } },
+  { path: 'stockages/cle-usb', component: ItemsComponent, data: { category: 'stock-usb', categoryLabel: 'Clé USB' } },
+  { path: 'stockages/accessoires', component: ItemsComponent, data: { category: 'stock-accessoire', categoryLabel: 'Accessoires de stockage' } },
 ];
 
 @NgModule({

@@ -23,7 +23,7 @@ export class ItemService {
 
   getItemsByMainCategory(category: string): Observable<Item[]> {
     let items = ITEMS;
-    items = items.filter(item => item.category.startsWith(category) != null);
+    items = items.filter(item => item.category.startsWith(category));
     return of(items);
   }
 }
