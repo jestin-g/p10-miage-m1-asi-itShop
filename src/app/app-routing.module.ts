@@ -4,12 +4,23 @@ import { ItemsComponent } from './components/items/items.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
+
   { path: '', component: ItemsComponent, data: { categoryLabel: 'Tous les produits' } },
-  { path: 'ordinateurs', component: ItemsComponent, data: { category: 'pc', categoryLabel: 'Ordinateur' } },
+
+  { path: 'ordinateurs', component: ItemsComponent, data: { category: 'pc', categoryLabel: 'Ordinateurs' } },
   { path: 'ordinateurs/portable', component: ItemsComponent, data: { category: 'pc-portable', categoryLabel: 'Ordinateurs Portables' } },
   { path: 'ordinateurs/bureau', component: ItemsComponent, data: { category: 'pc-bureau', categoryLabel: 'Ordinateurs de Bureau' } },
   { path: 'ordinateurs/accessoires', component: ItemsComponent, data: { category: 'pc-accessoire', categoryLabel: 'Accessoires d\'ordinateurs' } },
+  
+  { path: 'telephonies', component: ItemsComponent, data: { category: 'tel', categoryLabel: 'Téléphonies' } },
+  { path: 'telephonies/smartphones', component: ItemsComponent, data: { category: 'tel-smartphones', categoryLabel: 'Smartphones' } },
+  { path: 'telephonies/fixes', component: ItemsComponent, data: { category: 'tel-fixes', categoryLabel: 'Téléphones fixes' } },
+  { path: 'telephonies/accessoires', component: ItemsComponent, data: { category: 'tel-accessoire', categoryLabel: 'Accessoires de téléphonies' } },
 
+  { path: 'stockages', component: ItemsComponent, data: { category: 'tel', categoryLabel: 'Stockages' } },
+  { path: 'stockages/disques-durs', component: ItemsComponent, data: { category: 'tel-smartphones', categoryLabel: 'Disques durs' } },
+  { path: 'stockages/cle-usb', component: ItemsComponent, data: { category: 'tel-fixes', categoryLabel: 'Clé USB' } },
+  { path: 'stockages/accessoires', component: ItemsComponent, data: { category: 'tel-accessoire', categoryLabel: 'Accessoires de stockage' } },
 ];
 
 @NgModule({
