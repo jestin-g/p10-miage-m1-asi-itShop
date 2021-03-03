@@ -1,0 +1,10 @@
+{{ listName }}
+({{ listCategory }})
+{{isCategorized}}
+{{isMainCategory}}
+
+<ul>
+    <li *ngFor="let item of items">
+        {{item.label}} {{item.category}}
+    </li>
+</ul>
