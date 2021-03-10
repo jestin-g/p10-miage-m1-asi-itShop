@@ -15,6 +15,16 @@ export class ItemService {
     return items;
   }
 
+  getItemById(id: number): Observable<Item> {
+    const items = ITEMS;
+    for(let item of items) {
+      if (item.id === id) {
+        return of(item);
+      }
+    }
+    return of();
+  }
+
   getItemsByCategory(category: string): Observable<Item[]> {
     let items = ITEMS;
     items = items.filter(item => item.category === category);
