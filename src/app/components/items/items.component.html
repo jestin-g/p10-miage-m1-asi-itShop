@@ -5,6 +5,6 @@
 
 <ul>
     <li *ngFor="let item of items">
-        {{item.label}} {{item.category}}
+        <a routerLink="/produit/{{ item.id }}">{{item.label}}</a> {{item.category}}
     </li>
 </ul>
