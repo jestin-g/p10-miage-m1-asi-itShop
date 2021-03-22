@@ -1,16 +1,11 @@
-<ul>
-    <div *ngFor="let item of items">
-        <a routerLink="/produit/{{ item.id }}"></a>
-    </div>
-    <div class="row">
-        <div *ngFor="let item of items" class="card col-2 m-1">
-            <img src="{{item.picture}}" class="card-img-top" alt="Image de l'article">
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">{{item.category}}</h6>
-                <h5 class="card-title">{{item.label}}</h5>
-                <p class="card-text">{{item.category}}</p>
-                <a routerLink="/produit/{{item.id}}" class="btn btn-primary">Plus d'info...</a>
-            </div>
+<div class="row">
+    <div *ngFor="let item of items" class="card col-2 m-1">
+        <img src="{{item.picture}}" class="card-img-top" alt="Image de l'article">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{item.category}}</h6>
+            <h5 class="card-title">{{item.label}}</h5>
+            <p class="card-text">{{item.category}}</p>
+            <a routerLink="/produit/{{item.id}}" class="btn btn-primary">Plus d'info...</a>
         </div>
     </div>
-</ul>
+</div>

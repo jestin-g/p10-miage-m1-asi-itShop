@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/entities/item';
+import { CartService } from 'src/app/services/cart.service';
 import { ItemService } from 'src/app/services/item.service';
 
 @Component({
@@ -11,17 +12,20 @@ import { ItemService } from 'src/app/services/item.service';
 export class ItemComponent implements OnInit {
   item?: Item;
 
-  constructor(private itemService: ItemService, private route: ActivatedRoute) { }
+  constructor(
+    private itemService: ItemService,
+    public cartService: CartService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getItem();
   }
 
   private getItem(): void {
-
     const id = +this.route.snapshot.paramMap.get('id')!;
 
     this.itemService.getItemById(id)
       .subscribe(item => this.item = item);
   }
+
 }

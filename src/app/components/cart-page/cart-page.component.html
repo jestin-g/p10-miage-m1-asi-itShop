@@ -1,0 +1,14 @@
+<div *ngIf="this.items.length > 0 else elseBlock">
+    <ul>
+        <li *ngFor="let item of items">
+            {{item.label}} - {{item.price}}
+            <button class="btn btn-danger btn-sm" (click)="cartService.remove(item.id)">x</button>
+        </li>
+    </ul>
+    <div>
+        <h2>Total: {{this.getTotalPrice()}}</h2>
+    </div>
+</div>
+<ng-template #elseBlock>
+Votre panier est vide.
+</ng-template>

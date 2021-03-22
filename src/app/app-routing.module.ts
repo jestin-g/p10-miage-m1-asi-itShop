@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { ItemComponent } from './components/item/item.component';
 import { ItemsComponent } from './components/items/items.component';
 
@@ -9,6 +10,8 @@ const routes: Routes = [
   { path: '', component: ItemsComponent, data: { categoryLabel: 'Tous les produits' } },
 
   { path: 'produit/:id', component: ItemComponent },
+  
+  { path: 'cart', component: CartPageComponent },
 
   { path: 'ordinateurs', component: ItemsComponent, data: { category: 'pc', categoryLabel: 'Ordinateurs' } },
   { path: 'ordinateurs/portable', component: ItemsComponent, data: { category: 'pc-portable', categoryLabel: 'Ordinateurs Portables' } },

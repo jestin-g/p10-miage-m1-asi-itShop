@@ -14,6 +14,7 @@ export class ItemsComponent implements OnInit {
   listCategory: string = "";
   isCategorized: boolean = false;
   isMainCategory: boolean = false;
+  item?: Item;
 
   constructor(private itemService: ItemService, private route: ActivatedRoute) { }
 
@@ -54,5 +55,17 @@ export class ItemsComponent implements OnInit {
   private getAllItems() {
     this.itemService.getItems()
       .subscribe(items => this.items = items);
+  }
+
+  public deleteItem(id:number): void {
+
+    this.itemService.deleteItemById(id)
+      .subscribe(item=>this.item = item);
+  }
+
+  public modifyItem(id:number): void {
+
+    this.itemService.modifyItemById(id)
+      .subscribe(item=>this.item = item );
   }
 }
