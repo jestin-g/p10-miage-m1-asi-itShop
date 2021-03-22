@@ -10,8 +10,8 @@
                 <h5 class="card-title">{{item.label}}</h5>
                 <p class="card-text">{{item.category}}</p>
                   <a routerLink="/produit/{{item.id}}" class="btn btn-primary btn-sm">Plus d'info...</a>
-                  <a routerLink="/produit/{{item.id}}"  class="btn btn-primary btn-sm btn-space">Modifier</a>
-                  <a routerLink="/produit/{{item.id}}"  class="btn btn-danger btn-sm ">Supprimer</a>
+                  <button class="btn btn-primary btn-sm btn-space" (click)="modifyItem(item.id);">Modifier</button>
+                  <button class="btn btn-danger btn-sm " (click)="deleteItem(item.id);">Supprimer</button>
             </div>
         </div>
     </div>

@@ -29,8 +29,17 @@ export class ItemService {
     const items = ITEMS;
     for(let item of items) {
       if(item.id === id) {
-        console.log("Article supprimé");
-        return of();
+        console.log(item.label+" supprimé");
+      }
+    }
+    return of();
+  }
+
+  modifyItemById(id:number): Observable<Item> {
+    const items = ITEMS;
+    for(let item of items) {
+      if(item.id === id) {
+        console.log(item.label+" modifié");
       }
     }
     return of();
