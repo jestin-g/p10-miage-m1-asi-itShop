@@ -1,6 +1,14 @@
 <div *ngIf="item">
-    {{item.label}}
-    {{item.brand}}
-    {{item.category}}
-    {{item.price}}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="card col-4">
+            <div class="card-body">
+                <h5 class="card-title">{{item.brand | uppercase}} - {{item.label}}</h5>
+                <p class="card-text">{{item.price}}</p>
+                <p class="card-text"><small class="text-muted">{{item.category}}</small></p>
+            </div>
+            <img src="{{item.picture}}" class="card-img" alt="...">
+        </div>
+        <div class="col-4"></div>
+    </div>
 </div>
