@@ -9,7 +9,7 @@ import { ItemComponent } from './components/item/item.component';
 import { AuthModule } from './auth/auth.module';
 import { CartComponent } from './components/cart/cart.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

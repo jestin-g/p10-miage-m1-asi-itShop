@@ -1,7 +1,7 @@
 <div class="card">
     <div *ngIf="cartService.items.length; else elseBlock">
         <b>Votre panier:</b>
-        <div *ngFor='let item of cartService.items'> {{item.label}} - {{item.price}} </div>
+        <div *ngFor='let item of cartService.items'> {{item.label}} - {{item.price | currency}} </div>
         <div><a class="btn btn-primary btn-sm" routerLink="/cart">Voir mon panier</a></div>
     </div>
     <ng-template #elseBlock>

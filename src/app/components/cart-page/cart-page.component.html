@@ -1,12 +1,13 @@
 <div *ngIf="this.items.length > 0 else elseBlock">
+    <h1>Votre Panier</h1>
     <ul>
         <li *ngFor="let item of items">
-            {{item.label}} - {{item.price}}
+            <a routerLink="/produit/{{item.id}}">{{item.label}} - {{item.price | currency}}</a>
             <button class="btn btn-danger btn-sm" (click)="cartService.remove(item.id)">x</button>
         </li>
     </ul>
     <div>
-        <h2>Total: {{this.getTotalPrice()}}</h2>
+        <b>Total: {{this.getTotalPrice() |currency}}</b>
     </div>
 </div>
 <ng-template #elseBlock>

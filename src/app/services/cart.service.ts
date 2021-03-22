@@ -15,9 +15,7 @@ export class CartService {
   }
 
   add(item: Item): void {
-    if (!this.items.includes(item)) {
-      this.items.push(item);
-    }
+    this.items.push(item);
   }
 
   remove(id: number): void {
