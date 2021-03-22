@@ -15,6 +15,7 @@ export class ItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItem();
+    this.deleteItem();
   }
 
   private getItem(): void {
@@ -22,6 +23,14 @@ export class ItemComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')!;
 
     this.itemService.getItemById(id)
+      .subscribe(item => this.item = item);
+  }
+
+  private deleteItem(): void {
+
+    const id = +this.route.snapshot.paramMap.get('id')!;
+
+    this.itemService.deleteItemById(id)
       .subscribe(item => this.item = item);
   }
 }

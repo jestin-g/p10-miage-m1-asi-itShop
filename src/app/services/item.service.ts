@@ -25,6 +25,17 @@ export class ItemService {
     return of();
   }
 
+  deleteItemById(id:number): Observable<Item> {
+    const items = ITEMS;
+    for(let item of items) {
+      if(item.id === id) {
+        console.log("Article supprimé");
+        return of();
+      }
+    }
+    return of();
+  }
+
   getItemsByCategory(category: string): Observable<Item[]> {
     let items = ITEMS;
     items = items.filter(item => item.category === category);
@@ -36,4 +47,5 @@ export class ItemService {
     items = items.filter(item => item.category.startsWith(category));
     return of(items);
   }
+
 }
