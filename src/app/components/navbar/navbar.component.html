@@ -44,7 +44,10 @@
           </li>
         </ul>
         <form class="d-flex">
-          <button class="btn btn-outline-success" type="submit">Connexion</button>
+          <a class="nav-link" [routerLink]="['register']" routerLinkActive="active">Sign In</a>
+        </form>
+        <form class="d-flex">
+          <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">Login</a>
         </form>
       </div>
     </div>
