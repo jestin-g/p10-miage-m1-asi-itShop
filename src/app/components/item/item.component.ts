@@ -27,4 +27,5 @@ export class ItemComponent implements OnInit {
     this.itemService.getItemById(id)
       .subscribe(item => this.item = item);
   }
+
 }
