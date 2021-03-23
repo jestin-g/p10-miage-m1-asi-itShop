@@ -47,7 +47,7 @@ export class ItemsComponent implements OnInit {
           .subscribe(items => this.items = items);
       } else {
         this.itemService.getItemsByMainCategory(this.listCategory)
-        .subscribe(items => this.items = items);
+          .subscribe(items => this.items = items);
       }
     }
   }
@@ -55,17 +55,5 @@ export class ItemsComponent implements OnInit {
   private getAllItems() {
     this.itemService.getItems()
       .subscribe(items => this.items = items);
-  }
-
-  public deleteItem(id:number): void {
-
-    this.itemService.deleteItemById(id)
-      .subscribe(item=>this.item = item);
-  }
-
-  public modifyItem(id:number): void {
-
-    this.itemService.modifyItemById(id)
-      .subscribe(item=>this.item = item );
   }
 }

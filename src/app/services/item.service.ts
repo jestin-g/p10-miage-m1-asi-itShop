@@ -2,59 +2,35 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Item } from '../entities/item';
 import { ITEMS } from '../mock-data/mock-items';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
+  private itemsUrl = 'http://localhost:8080/p10-miage-m1-webservice-shop-backend-1.0-SNAPSHOT/api/item/'
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getItems(): Observable<Item[]> {
-    const items = of(ITEMS);
-    return items;
+    return this.http.get<Item[]>(this.itemsUrl);
   }
 
   getItemById(id: number): Observable<Item> {
-    const items = ITEMS;
-    for(let item of items) {
-      if (item.id === id) {
-        return of(item);
-      }
-    }
-    return of();
+    return this.http.get<Item>(this.itemsUrl + id);
   }
 
-  deleteItemById(id:number): Observable<Item> {
-    const items = ITEMS;
-    for(let item of items) {
-      if(item.id === id) {
-        console.log(item.label+" supprimé");
-      }
-    }
-    return of();
-  }
-
-  modifyItemById(id:number): Observable<Item> {
-    const items = ITEMS;
-    for(let item of items) {
-      if(item.id === id) {
-        console.log(item.label+" modifié");
-      }
-    }
-    return of();
+  deleteItemById(id: number): void {
+    this.http.delete(this.itemsUrl + id);
   }
 
   getItemsByCategory(category: string): Observable<Item[]> {
-    let items = ITEMS;
-    items = items.filter(item => item.category === category);
-    return of(items);
+    return this.http.get<Item[]>(this.itemsUrl + 'category/' + category);
   }
 
   getItemsByMainCategory(category: string): Observable<Item[]> {
-    let items = ITEMS;
-    items = items.filter(item => item.category.startsWith(category));
-    return of(items);
+    return this.http.get<Item[]>(this.itemsUrl + 'maincategory/' + category);
   }
 
 }
